@@ -1,0 +1,519 @@
+
+/* Basic ElderWatch styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8f6;
+  color: #243d30;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #256b4a;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #1b5138;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #e1a62c;
+  outline-offset: 3px;
+}
+
+/* Login Page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: white;
+  padding: 36px;
+  border: 1px solid #dfe7e1;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px #0000000d;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #256b4a;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.login-card h1 {
+  margin-bottom: 4px;
+  color: #256b4a;
+}
+
+.subtitle {
+  color: #64776b;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.login-card h2 {
+  margin-bottom: 8px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.login-card label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b9c9bf;
+  border-radius: 8px;
+  background: white;
+}
+
+.login-card form button {
+  margin-top: 12px;
+}
+
+.error {
+  color: #b42318;
+  font-size: 14px;
+}
+
+/* Dashboard */
+.dashboard-page {
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 36px;
+  background: white;
+  border-bottom: 1px solid #e0e8e2;
+}
+
+.topbar h1 {
+  font-size: 23px;
+  color: #256b4a;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #e8eee9;
+  color: #243d30;
+}
+
+.dashboard-content {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.dashboard-card {
+  background: white;
+  border: 1px solid #e0e8e2;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.status-message {
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .topbar {
+    padding: 16px;
+  }
+
+  .dashboard-content {
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+}
+
+
+/* =====================================
+   ELDERWATCH ADMIN LAYOUT
+===================================== */
+
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f8f6;
+}
+
+/* Sidebar */
+
+.admin-sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 18px;
+  background: #ffffff;
+  border-right: 1px solid #e2eae4;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 0 8px;
+}
+
+.sidebar-logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #256b4a;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar-brand strong {
+  display: block;
+  color: #256b4a;
+  font-size: 18px;
+}
+
+.sidebar-brand small {
+  color: #748579;
+  font-size: 12px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #536a5b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: #edf4ef;
+}
+
+.sidebar-nav a.active {
+  background: #e1f0e6;
+  color: #256b4a;
+}
+
+.sidebar-nav a:focus-visible {
+  outline: 3px solid #e1a62c;
+  outline-offset: 2px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px 8px;
+  font-size: 12px;
+  color: #849489;
+}
+
+/* Main Content */
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-topbar {
+  min-height: 82px;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  border-bottom: 1px solid #e2eae4;
+}
+
+.topbar-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.topbar-account {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-email {
+  color: #617768;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.admin-logout {
+  background: #e8eee9;
+  color: #243d30;
+}
+
+.admin-logout:hover {
+  background: #d8e5db;
+}
+
+.admin-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* Dashboard Overview */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.page-heading h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-heading p {
+  color: #657769;
+  margin: 0;
+}
+
+.primary-link {
+  display: inline-block;
+  background: #256b4a;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary-link:hover {
+  background: #1b5138;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+  background: white;
+  border: 1px solid #e2eae4;
+  border-radius: 14px;
+}
+
+.stat-card span {
+  color: #617768;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  font-size: 36px;
+  color: #256b4a;
+}
+
+.stat-card small {
+  color: #87978c;
+}
+
+/* Recent Records */
+
+.recent-panel {
+  margin-top: 28px;
+  padding: 26px;
+  background: white;
+  border: 1px solid #e2eae4;
+  border-radius: 14px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.panel-heading h2 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.panel-heading a {
+  color: #256b4a;
+  font-weight: 600;
+}
+
+.recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.recent-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 0;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.recent-list li:last-child {
+  border-bottom: none;
+}
+
+.recent-list strong {
+  font-size: 15px;
+}
+
+.recent-list p {
+  color: #718175;
+  font-size: 13px;
+  margin: 5px 0 0;
+}
+
+.recent-list li > span {
+  color: #256b4a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-shell {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid #e2eae4;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-nav a {
+    padding: 10px 12px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .admin-topbar {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+
+  .topbar-account {
+    flex-wrap: wrap;
+  }
+
+  .admin-content {
+    padding: 20px 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-panel {
+    padding: 18px;
+  }
+}
